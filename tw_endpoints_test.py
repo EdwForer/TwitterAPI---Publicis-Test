@@ -16,6 +16,7 @@ def make_code_challenge(code_verifier):
     code_challenge_sha256 = hashlib.sha256(code_verifier.encode()).digest()
     code_challenge = base64.urlsafe_b64encode(code_challenge_sha256).decode().rstrip("=")
     return code_challenge
+	
 def json_dumps_beauty(data):
 	return json.dumps(data, ensure_ascii = False, indent = 4)
 
